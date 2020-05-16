@@ -1,0 +1,34 @@
+Estrutura que deve ser criada:
+
+├── docker-compose.yml
+├── Dockerfile
+├── dump
+│   └── myDb.sql
+└── www
+    └── index.php
+    
+   
+   para executar:
+   docker-compose up -d
+   
+   
+   -Possíveis problemas:
+   Não conseguir conectar na base:
+   Limpar conteiners existentes e acessar o banco via CLI e executar manualmente operação de autorização:
+   
+   Limpar:
+  Remover todos os containers sem uso
+  docker container prune
+
+  Parar todos os containers
+  docker stop $(docker ps -q)
+
+  Remover todas as imagens locais
+  docker image prune
+  
+  Remove volumes "órfãos"
+  docker volume prune
+  
+  Mostra uso de recursos dos containers rodando
+  docker stats $(docker ps --format {{.Names}})
+  
